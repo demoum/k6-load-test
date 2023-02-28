@@ -1,0 +1,25 @@
+name: K6 load test
+on: [push]
+permissions: 
+  contents: write
+jobs:
+  build:
+    name: K6 load test
+    runs-on: ubuntu-lastest
+    steps:
+      - name: step 1 - checkout
+        uses: actions/checkout@v3
+
+      - name: step 2 - run k6 load test
+        uses: grafana/k6-action@v0.2.0
+        with:
+          filename: script/bonus-1.js
+
+      - run: ls & mkdir report e mv index.html report
+
+      - name: step 4 - publish report 
+        uses: peaceiris/actions-gh-pages@v3
+        with: 
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: report
