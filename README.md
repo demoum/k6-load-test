@@ -6,7 +6,7 @@ Scripts para testes de performance rápidos e poderosos de forma simples e execu
 
 ## Referência
 
- - Udemy: https://www.udemy.com/course/teste-de-performance-com-k6/
+ - Curso Udemy: https://www.udemy.com/course/teste-de-performance-com-k6/
  - Documentação: https://k6.io/docs/
  
 
