@@ -15,25 +15,29 @@ Scripts para testes de performance rápidos e poderosos de forma simples e execu
 ### Smoke Testing
 
 Verificam se o seu sistema pode lidar com carga mínima, sem problemas.
-
+```bash
 export const options = {
 
   vus: 1,
   duration: '1m',
 
 };
+```
 
 ### Load Testing
 
 Avaliam o desempenho do sistema em termos de usuários simultâneos ou solicitações por segundo.
 
 #### Carga constante
+```bash
 export const options1 = {
     vus: 100,
     duration: '20m',
 };
+```
 
 #### Carga variavel
+```bash
 export const options2 = {
     stages: [
       { duration: '5m', target: 100 }, 
@@ -41,12 +45,14 @@ export const options2 = {
       { duration: '5m', target: 0 }, 
     ]
   };
+```
 
 ### Spike and Stress Testing 
 
 Avaliam os limites e a estabilidade do seu sistema sob condições extremas.
 
 #### Spike
+```bash
 export const options = {
     stages: [
         { duration: "10s", target: 100 }, 
@@ -58,8 +64,10 @@ export const options = {
         { duration: "10s", target: 0 },
     ],
 };
+```
 
 #### Stress
+```bash
 export const options = {
     stages: [
         { duration: "2m", target: 100 }, 
@@ -73,12 +81,14 @@ export const options = {
         { duration: "10m", target: 0 },
     ],
 };
+```
 
 ### Soak tests 
 
 Avaliam a confiabilidade e o desempenho do seu sistema durante um longo período de tempo.
 
 #### Carga durante um período de tempo
+```bash
 export const options = {
     stages: [
         { duration: '2m', target: 400 },
@@ -86,3 +96,4 @@ export const options = {
         { duration: '2m', target: 0 }, 
     ],
 };
+```
